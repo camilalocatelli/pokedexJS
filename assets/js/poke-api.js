@@ -1,4 +1,3 @@
-
 const pokeApi = {}
 
 function convertPokeApiDetailToPokemon(pokeDetail) {
@@ -13,6 +12,13 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.type = type
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+
+    pokemon.attack = pokeDetail.stats[4].base_stat;
+    pokemon.defense = pokeDetail.stats[3].base_stat;
+    pokemon.hp = pokeDetail.stats[5].base_stat;
+    pokemon.specialAttack = pokeDetail.stats[2].base_stat;
+    pokemon.specialDefense = pokeDetail.stats[1].base_stat;
+    pokemon.speed = pokeDetail.stats[0].base_stat;
 
     return pokemon
 }
